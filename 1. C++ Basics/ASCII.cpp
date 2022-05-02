@@ -6,5 +6,5 @@ int main(){
 	cout<< (int) c<<endl;//typecasting to know ASCII value of 'a'
 	char b = 'c';
 	cout<< (int) b<<endl;
-	cout<<c-b<<endl;
+	cout<<b-c<<endl;
 }
