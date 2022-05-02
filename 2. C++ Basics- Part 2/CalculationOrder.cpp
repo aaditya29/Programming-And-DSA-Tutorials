@@ -21,6 +21,6 @@ int main(){
 	//But if we change datatype to double
 	double b = 3/2;
 	cout<<b<<endl;//Output will be 1 because first 3/2 calculation will happen in int hence will be calculated as 1.
-	//Then will be stored in double. T 
+	//Then will be stored in double.
 
 }
