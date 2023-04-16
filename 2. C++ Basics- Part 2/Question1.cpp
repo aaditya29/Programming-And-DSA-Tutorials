@@ -17,17 +17,20 @@ Output:
 
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-	//running an infinite loop which ends after we find 42
-	while(true){
+int main()
+{
+	// running an infinite loop which ends after we find 42
+	while (true)
+	{
 		int x;
-		cin>>x;
-		if(x==42){
+		cin >> x;
+		if (x == 42)
+		{
 			break;
 		}
-		cout<<x<<endl;
+		cout << x << endl;
 	}
 }
