@@ -93,4 +93,11 @@ int main()
     {
         cout << v[i] << endl;
     }
+
+    // Shortcut way to write vectors
+    vector<int> w = {4, 5, 6, 7};
+    for (int ii = 0; ii < w.size(); ii++)
+    {
+        cout << w[ii] << endl;
+    }
 }
