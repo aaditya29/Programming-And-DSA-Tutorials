@@ -17,3 +17,23 @@ Example 3:
 Input: nums = [3,3], target = 6
 Output: [0,1]
 */
+
+class Solution
+{
+public:
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+
+        for (int i = 0; i < nums.size(); i++)
+        {
+            for (int j = i + 1; j < nums.size(); j++)
+            {
+                if (nums[i] + nums[j] == target)
+                {
+                    return {i, j};
+                }
+            }
+        }
+        return {};
+    }
+};
