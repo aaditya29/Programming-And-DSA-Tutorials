@@ -110,3 +110,56 @@ std::vector<int> v2 {1, 2, 3, 4, 5}; // Initialize with values
 std::vector<int> v3(5); // Initialize with 5 default elements (0 for int)
 std::vector<int> v4(5, 10); // Initialize with 5 elements, all set to 10
 ```
+
+4. **Accessing Elements:** We can access vector elements using the `[]` operator or the `at()` member function. `at()` performs bound checking and throws an exception if the index is out of range, while `[]` doesn't.
+
+```C++
+v2[0] = 10; // Assign 10 to the first element
+int value = v2.at(2); // Get the third element
+```
+
+4. **Common Member Functions:**
+
+- `push_back(value)`: Adds a new element at the end of the vector.
+- `pop_back():` Removes the last element from the vector.
+- `size()`: Returns the number of elements in the vector.
+- `empty()`: Returns true if the vector is empty, false otherwise.
+- `clear()`: Removes all elements from the vector.
+
+5. **Iterators:** Vectors provide iterator support, which allows us to traverse the elements using iterators. We can use `begin()` and `end()` to get iterators pointing to the beginning and end of the vector, respectively.
+
+6. **Resizing:** We can resize a vector using the `resize()` member function. If the new size is greater than the current size, the vector is expanded, and new elements are added (with default values). If the new size is less than the current size, the vector is truncated.
+
+7. **Capacity:** Vectors have a capacity, which is the total number of elements they can hold before requiring reallocation. We can check the capacity using the `capacity()` member function and reserve space for future elements using the `reserve()` member function.
+
+#### Vector Example:
+
+```C++
+#include <iostream>
+#include <vector>
+
+int main() {
+    std::vector<int> numbers {1, 2, 3, 4, 5};
+
+    // Accessing elements
+    std::cout << "First element: " << numbers[0] << std::endl; // Output: First element: 1
+    std::cout << "Third element: " << numbers.at(2) << std::endl; // Output: Third element: 3
+
+    // Modifying elements
+    numbers[2] = 10;
+    numbers.push_back(6);
+
+    // Iterating over the vector
+    std::cout << "Vector elements: ";
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl; // Output: Vector elements: 1 2 10 4 5 6
+
+    // Resizing
+    numbers.resize(8);
+    std::cout << "Size after resizing: " << numbers.size() << std::endl; // Output: Size after resizing: 8
+
+    return 0;
+}
+```
