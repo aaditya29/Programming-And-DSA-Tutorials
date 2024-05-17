@@ -93,3 +93,20 @@ Vectors are part of the C++ Standard Template Library (STL) and are widely used 
 Here are some key points about vectors in C++:
 
 1. **Header File:** To use vectors in your C++ program, we need to include the `<vector>` header file.
+
+2. **Declaration:** We can declare a vector like this:
+
+```C++
+std::vector<data_type> vector_name;
+```
+
+We can replace `data_type` with the type of elements we want to store in the `vector` (e.g., int, double, std::string, or a user-defined class).
+
+3. **Initialization:** We can initialize a vector in several ways:
+
+```C++
+std::vector<int> v1; // Empty vector
+std::vector<int> v2 {1, 2, 3, 4, 5}; // Initialize with values
+std::vector<int> v3(5); // Initialize with 5 default elements (0 for int)
+std::vector<int> v4(5, 10); // Initialize with 5 elements, all set to 10
+```
