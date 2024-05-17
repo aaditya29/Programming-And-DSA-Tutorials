@@ -17,4 +17,6 @@ int main()
     {
         cout << *itr << " ";
     }
+
+    sort(itr1, itr2);
 }
