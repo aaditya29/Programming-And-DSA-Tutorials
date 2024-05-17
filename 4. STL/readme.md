@@ -85,3 +85,11 @@ double pi = doubleBox.get(); // pi will be 3.14
 
 Here, we create two instances of the `Box` class, one for `int` and one for `double`. The compiler generates the appropriate class definition based on the specified data type.
 Class templates can also have multiple type parameters, default type parameters, and member function templates. They can be specialized for specific data types to provide optimized implementations.
+
+## Vectors in STL
+
+Vectors are part of the C++ Standard Template Library (STL) and are widely used sequential containers that store elements in a dynamic array.
+
+Here are some key points about vectors in C++:
+
+1. **Header File:** To use vectors in your C++ program, we need to include the `<vector>` header file.
