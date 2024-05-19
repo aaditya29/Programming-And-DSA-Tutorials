@@ -23,17 +23,26 @@ public:
 
     void Error(const char *message)
     {
-        cout << "[Error]:" << message << endl;
+        if (m_LogLevel >= LogLevelError)
+        {
+            cout << "[Error]:" << message << endl;
+        }
     }
 
     void Info(const char *message)
     {
-        cout << "[Info]:" << message << endl;
+        if (m_LogLevel >= LogLevelWarning)
+        {
+            cout << "[Info]:" << message << endl;
+        }
     }
 
     void Warn(const char *message)
     {
-        cout << "[Warning]:" << message << endl;
+        if (m_LogLevel >= LogLevelInfo)
+        {
+            cout << "[Warning]:" << message << endl;
+        }
     }
 };
 
@@ -42,7 +51,9 @@ int main()
 
     Log log;
     // Setting log level
-    log.SetLevel(LogLevelWarning);
+    log.SetLevel(log.LogLevelWarning);
     log.Warn("You are warned");
+    log.Error("We have error!!!");
+    log.Info("Hello World");
     cin.get();
 }
