@@ -218,3 +218,25 @@ int main() {
 }
 
 ```
+
+## `new` Keyword in C++
+
+The `new` keyword in C++ is used for dynamic memory allocation. It allocates memory on the heap for an object or an array of objects and returns a pointer to the beginning of the allocated memory. Unlike automatic (stack) memory allocation, the memory allocated using `new` remains allocated until it is explicitly deallocated using the `delete` keyword.
+
+### Syntax and Usage of new
+
+#### 1. Allocating a Single Object:
+
+```C++
+int* p = new int;        // Allocates memory for an int
+*p = 5;                  // Assigns value to the allocated memory
+
+// Using a constructor for a class object
+class MyClass {
+public:
+    MyClass() { /* Constructor code */ }
+};
+
+MyClass* obj = new MyClass();  // Allocates memory for an object of MyClass
+
+```
