@@ -143,3 +143,19 @@ int main() {
 }
 
 ```
+
+## Virtual Functions in C++
+
+Virtual functions in C++ are a key feature that enables polymorphism, allowing derived classes to override methods of base classes and enabling dynamic binding at runtime. This is crucial for achieving runtime polymorphism and ensuring that the correct method is called based on the actual object type, not the type of the pointer or reference.
+
+### Key Concepts of Virtual Functions
+
+1. **Polymorphism:** Virtual functions allow a base class to declare a function that can be overridden by derived classes. This enables polymorphic behavior, where the function that gets called is determined at runtime based on the actual type of the object.
+
+2. **Dynamic Binding:** With virtual functions, the function call is resolved at runtime rather than at compile time. This is also known as late binding or dynamic dispatch.
+
+3. **Virtual Table (vtable):** The compiler maintains a table of pointers to virtual functions, known as the vtable, for each class with virtual functions. Each object of such a class contains a pointer to the vtable, which is used to resolve virtual function calls at runtime.
+
+### Declaring Virtual Functions
+
+To declare a virtual function, use the `virtual` keyword in the base class method declaration.
