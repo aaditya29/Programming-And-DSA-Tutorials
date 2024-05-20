@@ -31,3 +31,15 @@ static int globalValue = 10; // A different static global variable
 ```
 
 In this case, `file1.cpp` and `file2.cpp` each have their own static global variable `globalValue`, which are independent of each other.
+
+## Constructors in C++
+
+Constructors in C++ are special member functions of a class that are automatically called when an object of that class is instantiated. They are used to initialize objects, allocate resources, and perform any setup required for the object.
+
+Here’s a detailed overview of constructors in C++:
+
+### Key Features of Constructors
+
+1. **Same Name as Class:** Constructors have the same name as the class they belong to.
+2. **No Return Type:** Constructors do not have a return type, not even `void`.
+3. **Automatic Invocation:** Constructors are called automatically when an object is created.
