@@ -43,3 +43,103 @@ Here’s a detailed overview of constructors in C++:
 1. **Same Name as Class:** Constructors have the same name as the class they belong to.
 2. **No Return Type:** Constructors do not have a return type, not even `void`.
 3. **Automatic Invocation:** Constructors are called automatically when an object is created.
+
+### Types of Constructors
+
+#### 1. Default Constructor:
+
+A constructor that can be called with no arguments. If no constructor is explicitly defined, the compiler provides a default constructor.
+
+```C++
+class MyClass {
+public:
+    MyClass() {
+        // Default constructor
+    }
+};
+
+```
+
+#### 2. Parameterized Constructor:
+
+A constructor that takes arguments to initialize an object with specific values.
+
+```C++
+class MyClass {
+public:
+    MyClass(int x, int y) {
+        // Parameterized constructor
+    }
+};
+
+```
+
+#### 3. Copy Constructor:
+
+A constructor that initializes an object using another object of the same class. The copy constructor is called when an object is passed by value.
+
+```C++
+class MyClass {
+public:
+    MyClass(const MyClass &obj) {
+        // Copy constructor
+    }
+};
+
+```
+
+#### Constructor Example:
+
+```C++
+#include <iostream>
+using namespace std;
+
+class MyClass {
+    int x, y;
+public:
+    // Default constructor
+    MyClass() : x(0), y(0) {
+        cout << "Default constructor called" << endl;
+    }
+
+    // Parameterized constructor
+    MyClass(int a, int b) : x(a), y(b) {
+        cout << "Parameterized constructor called" << endl;
+    }
+
+    // Copy constructor
+    MyClass(const MyClass &obj) {
+        x = obj.x;
+        y = obj.y;
+        cout << "Copy constructor called" << endl;
+    }
+
+    // Move constructor
+    MyClass(MyClass &&obj) noexcept : x(obj.x), y(obj.y) {
+        obj.x = 0;
+        obj.y = 0;
+        cout << "Move constructor called" << endl;
+    }
+
+    void display() {
+        cout << "x: " << x << ", y: " << y << endl;
+    }
+};
+
+int main() {
+    MyClass obj1; // Calls default constructor
+    obj1.display();
+
+    MyClass obj2(10, 20); // Calls parameterized constructor
+    obj2.display();
+
+    MyClass obj3 = obj2; // Calls copy constructor
+    obj3.display();
+
+    MyClass obj4 = std::move(obj2); // Calls move constructor
+    obj4.display();
+
+    return 0;
+}
+
+```
