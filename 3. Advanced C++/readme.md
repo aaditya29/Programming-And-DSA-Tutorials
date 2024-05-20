@@ -240,3 +240,31 @@ public:
 MyClass* obj = new MyClass();  // Allocates memory for an object of MyClass
 
 ```
+
+#### 2. Allocating an Array of Objects:
+
+```C++
+int* arr = new int[10];  // Allocates memory for an array of 10 ints
+
+// Allocating an array of objects
+MyClass* objArray = new MyClass[5];  // Allocates memory for an array of 5 MyClass objects
+
+```
+
+### Deallocating Memory with `delete`
+
+#### 1. Deleting a Single Object:
+
+```c++
+delete p;        // Deallocates memory allocated for a single int
+delete obj;      // Deallocates memory for the MyClass object
+
+```
+
+#### 2. Deleting an Array of Objects:
+
+```c++
+delete[] arr;    // Deallocates memory allocated for an array of ints
+delete[] objArray;  // Deallocates memory for an array of MyClass objects
+
+```
