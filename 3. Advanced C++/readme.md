@@ -159,3 +159,62 @@ Virtual functions in C++ are a key feature that enables polymorphism, allowing d
 ### Declaring Virtual Functions
 
 To declare a virtual function, use the `virtual` keyword in the base class method declaration.
+
+```C++
+class Base {
+public:
+    virtual void show() {
+        cout << "Base class show function" << endl;
+    }
+    virtual ~Base() {} // Virtual destructor for proper cleanup
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        cout << "Derived class show function" << endl;
+    }
+};
+```
+
+### Example of Virtual Functions
+
+```C++
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void show() {
+        cout << "Base class show function" << endl;
+    }
+    virtual void display() {
+        cout << "Base class display function" << endl;
+    }
+    virtual ~Base() {} // Virtual destructor
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        cout << "Derived class show function" << endl;
+    }
+    void display() override {
+        cout << "Derived class display function" << endl;
+    }
+};
+
+void demonstrate(Base &obj) {
+    obj.show();    // Calls the overridden method based on the actual object type
+    obj.display(); // Calls the overridden method based on the actual object type
+}
+
+int main() {
+    Base base;
+    Derived derived;
+    demonstrate(base);    // Calls Base class methods
+    demonstrate(derived); // Calls Derived class methods
+    return 0;
+}
+
+```
