@@ -284,3 +284,46 @@ Operator overloading in C++ allows you to redefine the way operators work for us
 - Only existing operators can be overloaded. We cannot create new operators.
 - The precedence and associativity of operators cannot be changed.
 - Some operators cannot be overloaded, such as `::`, `.*`, `.`, `? :`, `sizeof`, `typeid`, `static_cast`, `const_cast`, `dynamic_cast`, `reinterpret_cast`.
+
+### Example of Operator Overloading
+
+#### Overloading the + Operator
+
+Let's define a simple `Complex` class and overload the `+` operator to add two complex numbers.
+
+```C++
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    double real;
+    double imag;
+public:
+    // Constructor
+    Complex(double r = 0, double i = 0) : real(r), imag(i) {}
+
+    // Overload + operator using member function
+    Complex operator+(const Complex& other) const {
+        return Complex(real + other.real, imag + other.imag);
+    }
+
+    // Overload << operator for output
+    friend ostream& operator<<(ostream& os, const Complex& c);
+};
+
+// Definition of << operator
+ostream& operator<<(ostream& os, const Complex& c) {
+    os << "(" << c.real << ", " << c.imag << ")";
+    return os;
+}
+
+int main() {
+    Complex c1(3.0, 4.0);
+    Complex c2(1.0, 2.0);
+    Complex c3 = c1 + c2; // Calls overloaded + operator
+    cout << "c1 + c2 = " << c3 << endl; // Calls overloaded << operator
+    return 0;
+}
+
+```
