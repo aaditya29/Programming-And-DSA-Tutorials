@@ -268,3 +268,7 @@ delete[] arr;    // Deallocates memory allocated for an array of ints
 delete[] objArray;  // Deallocates memory for an array of MyClass objects
 
 ```
+
+## Operator Overloading in C++
+
+Operator overloading in C++ allows you to redefine the way operators work for user-defined types (classes). This provides a way to make your custom types behave like built-in types with respect to operators such as `+, -, \*, ==`, and so on. Operator overloading can make our classes more intuitive and easier to use.
