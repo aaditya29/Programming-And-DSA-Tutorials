@@ -327,3 +327,18 @@ int main() {
 }
 
 ```
+
+- The `Complex` class is defined with two private data members: `real` and `imag`, representing the real and imaginary parts of a complex number, respectively.
+- The class has a constructor that initializes the real and imag data members. If no arguments are provided, the constructor initializes both components to `0`.
+- The `operator+` function is overloaded as a member function of the Complex class. It takes another Complex object (`other`) as a parameter and returns a new Complex object whose components are the sums of the corresponding components of the two operands.
+- The `operator<<` function is overloaded as a friend function of the Complex class. It takes an ostream object (`os`) and a Complex object (`c`) as parameters. It outputs the complex number in the format (real, imag) to the specified output stream (`os`).
+- In the `main` function:
+  - Two Complex objects, `c1` and `c2`, are created with the values `(3.0, 4.0)` and `(1.0, 2.0)`, respectively.
+  - A third Complex object, `c3`, is created by adding `c1` and `c2` using the overloaded `+` operator `(c3 = c1 + c2;)`.
+  - The sum of `c1` and `c2` (stored in `c3`) is printed to the console using the overloaded << operator `(cout << "c1 + c2 = " << c3 << endl;)`.
+
+#### The output of the program will be:
+
+```C++
+c1 + c2 = (4, 6)
+```
