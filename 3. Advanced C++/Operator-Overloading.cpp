@@ -18,6 +18,12 @@ struct Vector2
         return Vector2(x + other.x, y + other.y);
     }
 
+    // Defining operator overloading
+    Vector2 operator+(const Vector2 &other) const
+    {
+        return Add(other);
+    }
+
     Vector2 Multiply(const Vector2 &other) const
     {
         return Vector2(x * other.x, y * other.y);
@@ -30,5 +36,9 @@ int main()
     Vector2 speed(6, 4);
     Vector2 powerup(5, 4);
 
-        cin.get();
+    Vector2 result1 = position.Add(speed.Multiply(powerup));
+
+    Vector2 result2 = position + speed; //* powerup;
+
+    cin.get();
 }
