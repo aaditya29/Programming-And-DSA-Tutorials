@@ -350,3 +350,19 @@ The Standard Template Library (STL) in C++ provides a collection of powerful, ge
 - **Modifiers**: Functions to modify containers, like `insert()`, `erase()`, `push_back()`, `pop_back()`, `clear()`, `swap()`.
 
 Understanding these containers and their characteristics will help you choose the right one for your specific needs, improving the efficiency and clarity of your code.
+
+### Header Files
+
+```cpp
+#include <vector>
+#include <deque>
+#include <list>
+#include <set>//set and multiset
+#include <map>//map and multimap
+#include <unordered_set>//unordered sets and multisets
+#include <unordered_map> //unordered map/multimap
+#include <iterator>
+#include <algorithm>
+#include <numeric>//some numeric algorithm
+#include <functional>
+```
