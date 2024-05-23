@@ -163,3 +163,190 @@ int main() {
     return 0;
 }
 ```
+
+## Containers
+
+The Standard Template Library (STL) in C++ provides a collection of powerful, generic classes and functions, including a variety of container classes. Containers are used to store collections of objects.
+
+### Sequence Containers
+
+1. **`std::vector`**
+
+   - Dynamic array.
+   - Elements can be accessed via an index.
+   - Supports fast random access and dynamic resizing.
+   - Insertion/removal at the end is fast (amortized constant time).
+
+   ```cpp
+   std::vector<int> vec = {1, 2, 3, 4};
+   vec.push_back(5);
+   ```
+
+2. **`std::deque`**
+
+   - Double-ended queue.
+   - Allows fast insertion/removal at both ends.
+   - Provides indexed access to elements.
+
+   ```cpp
+   std::deque<int> deq = {1, 2, 3, 4};
+   deq.push_back(5);
+   deq.push_front(0);
+   ```
+
+3. **`std::list`**
+
+   - Doubly linked list.
+   - Allows fast insertion/removal from anywhere in the sequence.
+   - No random access (elements must be accessed sequentially).
+
+   ```cpp
+   std::list<int> lst = {1, 2, 3, 4};
+   lst.push_back(5);
+   lst.push_front(0);
+   ```
+
+4. **`std::forward_list`**
+
+   - Singly linked list.
+   - Allows fast insertion/removal from the front.
+   - Uses less memory compared to `std::list` but lacks bidirectional iteration.
+
+   ```cpp
+   std::forward_list<int> flst = {1, 2, 3, 4};
+   flst.push_front(0);
+   ```
+
+### Associative Containers
+
+1. **`std::set`**
+
+   - Collection of unique elements.
+   - Elements are ordered.
+   - Provides fast search, insertion, and removal (logarithmic complexity).
+
+   ```cpp
+   std::set<int> s = {1, 2, 3, 4};
+   s.insert(5);
+   ```
+
+2. **`std::multiset`**
+
+   - Similar to `std::set`, but allows duplicate elements.
+
+   ```cpp
+   std::multiset<int> ms = {1, 2, 2, 3, 4};
+   ms.insert(5);
+   ```
+
+3. **`std::map`**
+
+   - Collection of key-value pairs.
+   - Keys are unique and ordered.
+   - Provides fast search, insertion, and removal (logarithmic complexity).
+
+   ```cpp
+   std::map<int, std::string> m = {{1, "one"}, {2, "two"}};
+   m[3] = "three";
+   ```
+
+4. **`std::multimap`**
+
+   - Similar to `std::map`, but allows duplicate keys.
+
+   ```cpp
+   std::multimap<int, std::string> mm = {{1, "one"}, {1, "uno"}};
+   mm.insert({2, "two"});
+   ```
+
+### Unordered Associative Containers
+
+1. **`std::unordered_set`**
+
+   - Collection of unique elements.
+   - Elements are not ordered.
+   - Provides average constant-time complexity for search, insertion, and removal.
+
+   ```cpp
+   std::unordered_set<int> us = {1, 2, 3, 4};
+   us.insert(5);
+   ```
+
+2. **`std::unordered_multiset`**
+
+   - Similar to `std::unordered_set`, but allows duplicate elements.
+
+   ```cpp
+   std::unordered_multiset<int> ums = {1, 2, 2, 3, 4};
+   ums.insert(5);
+   ```
+
+3. **`std::unordered_map`**
+
+   - Collection of key-value pairs.
+   - Keys are unique and not ordered.
+   - Provides average constant-time complexity for search, insertion, and removal.
+
+   ```cpp
+   std::unordered_map<int, std::string> um = {{1, "one"}, {2, "two"}};
+   um[3] = "three";
+   ```
+
+4. **`std::unordered_multimap`**
+
+   - Similar to `std::unordered_map`, but allows duplicate keys.
+
+   ```cpp
+   std::unordered_multimap<int, std::string> umm = {{1, "one"}, {1, "uno"}};
+   umm.insert({2, "two"});
+   ```
+
+### Container Adapters
+
+1. **`std::stack`**
+
+   - Adapts a container to provide stack (LIFO) functionality.
+   - By default, implemented using `std::deque`.
+
+   ```cpp
+   std::stack<int> stk;
+   stk.push(1);
+   stk.push(2);
+   int top = stk.top();
+   stk.pop();
+   ```
+
+2. **`std::queue`**
+
+   - Adapts a container to provide queue (FIFO) functionality.
+   - By default, implemented using `std::deque`.
+
+   ```cpp
+   std::queue<int> q;
+   q.push(1);
+   q.push(2);
+   int front = q.front();
+   q.pop();
+   ```
+
+3. **`std::priority_queue`**
+
+   - Adapts a container to provide priority queue functionality.
+   - By default, implemented using `std::vector`.
+
+   ```cpp
+   std::priority_queue<int> pq;
+   pq.push(5);
+   pq.push(1);
+   pq.push(3);
+   int top = pq.top();
+   pq.pop();
+   ```
+
+### Container Properties
+
+- **Capacity**: Functions like `size()`, `empty()`, and `max_size()` to check the number of elements and capacity.
+- **Element Access**: Functions to access elements, like `front()`, `back()`, `operator[]`, and `at()`.
+- **Modifiers**: Functions to modify containers, like `insert()`, `erase()`, `push_back()`, `pop_back()`, `clear()`, `swap()`.
+
+Understanding these containers and their characteristics will help you choose the right one for your specific needs, improving the efficiency and clarity of your code.
