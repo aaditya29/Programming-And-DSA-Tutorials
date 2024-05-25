@@ -10,5 +10,5 @@ void function_1()
 
 int main()
 {
-    std::thread t1(function_1);
+    std::thread t1(function_1); // t1 starts running
 }
