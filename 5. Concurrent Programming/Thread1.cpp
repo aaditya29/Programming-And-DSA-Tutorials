@@ -12,7 +12,11 @@ void function_1()
 
 int main()
 {
-    function_1();
+    std::thread t1(function_1); // t1 starts running
+    // t1.join();//main thread waits for completion of t1
+    t1.detach(); // t1 will freely run on its own
 
+    if (t1.joinable())
+        t1.join();
     return 0;
 }
