@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 
 using namespace std;
 
@@ -27,6 +28,15 @@ int Rotate(int px, int py, int r)
 
 int main()
 {
+
+    // Create Screen Buffer
+    wchar_t *screen = new wchar_t[nScreenWidth * nScreenHeight];
+    for (int i = 0; i < nScreenWidth * nScreenHeight; i++)
+        screen[i] = L' ';
+    HANDLE hConsole = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
+    SetConsoleActiveScreenBuffer(hConsole);
+    DWORD dwBytesWritten = 0;
+
     // Creating assets
     tetromino[0].append(L"..X."); //. to express empty space and X to represent part of the shape
     tetromino[0].append(L"..X.");
