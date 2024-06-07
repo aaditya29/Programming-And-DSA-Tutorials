@@ -3,6 +3,10 @@
 using namespace std;
 
 wstring tetromino[7]; // tetromino is a geometric shape composed of four squares, connected orthogonally
+// playing field vairables
+int nFieldWidth = 12;
+int nFieldHeight = 18;
+unsigned char *pField = nullptr; // allocating dynamically
 
 // making rotation function
 int Rotate(int px, int py, int r)
@@ -58,4 +62,9 @@ int main()
     tetromino[6].append(L".XX.");
     tetromino[6].append(L".X..");
     tetromino[6].append(L"..X.");
+
+    pField = new unsigned char[nFieldWidth * nFieldHeight]; // Create play field buffer
+    for (int x = 0; x < nFieldWidth; x++)                   // Board Boundary
+        for (int y = 0; y < nFieldHeight; y++)
+            pField[y * nFieldWidth + x] = (x == 0 || x == nFieldWidth - 1 || y == nFieldHeight - 1) ? 9 : 0; // 9 is used to set the border.
 }
